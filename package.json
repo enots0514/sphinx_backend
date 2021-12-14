@@ -1,0 +1,29 @@
+{
+  "name": "sphinx_backend",
+  "version": "1.0.0",
+  "description": "> express와 몽고DB를 활용함\r >   >기존 aattisphinx를 기반으로 리팩토링",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www.js",
+    "server": "nodemon ./bin/www.js -e js, json, pug, css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enots0514/sphinx_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enots0514/sphinx_backend/issues"
+  },
+  "homepage": "https://github.com/enots0514/sphinx_backend#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.1",
+    "pug": "^3.0.2"
+  }
+}

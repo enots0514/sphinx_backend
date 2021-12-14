@@ -1,0 +1,17 @@
+extends ../home/layout
+block style 
+    link(rel="stylesheet" href="/css/register.css")
+
+block indexContent
+       
+        div.login-page
+            div.form
+                form.login-form(method="POST" action="/auth/register")
+                    h1.loginTitle(style="text-align:center; color:red; font-size:2vh; padding-bottom:1vh;" )  #{formTitle}
+                    input(type="text" name="email" id="email" placeholder="이메일" required)
+                    input(type="text" name="nicname" id="nicname" placeholder="닉네임" required)
+                    input(type="password" name="pwd" id="pwd" placeholder="비밀번호" required)
+                    input(type="password" name="confirm" id="confirm" placeholder="비밀번호 확인" required)
+                    button 등록하기                   
+                    p.message 이미 등록하셨나요? 
+                        a(href="/auth/login") 로그인

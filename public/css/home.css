@@ -1,0 +1,232 @@
+
+/* 글꼴 포맷 */
+@font-face {
+    font-family:maruB;
+    src: url('/font/MaruBuri-Bold.otf');
+}
+@font-face {
+    font-family:maruEL;
+    src: url('/font/MaruBuri-ExtraLight.otf');
+}
+@font-face {
+    font-family:maruL;
+    src: url('/font/MaruBuri-Light.otf');
+}
+@font-face {
+    font-family:maruR;
+    src: url('/font/MaruBuri-Regular.otf');
+}
+@font-face {
+    font-family:maruSB;
+    src: url('/font/MaruBuri-SemiBold.otf');
+}
+
+.maruB { font-family:maruB;}
+.maruEL { font-family:maruEL;}
+.maruL { font-family:maruL; }
+.maruR { font-family:maruR; }
+.maruSB { font-family:maruSB; }
+
+/* 레이아웃 */
+
+* {margin:0; padding:0; box-sizing:border-box;}
+
+body {width:100vw; height:100vh; background-color: rgb(255, 255, 255);
+    }
+
+    /* 헤더 영역 */
+header{height:7vh;
+    width:100vw;
+    display:flex;
+     background-color: rgba(242, 243, 231, 0.719); 
+    /* padding:1vh; */
+    /* text-align:center; */
+}
+
+#title_box{
+  flex: 1 1 10%;
+  /* border:1px solid red; */
+ 
+}
+
+.title_img{
+    display:inline-block;
+    height:100%;
+    width:100%;
+    background: url("/img/text-logo.png") no-repeat center;
+    background-size: contain;
+ }
+
+
+.title_text {  
+    display:inline-block;
+    font-family:maruB; 
+    font-size:1.5vw;
+    color: rgb(23, 81, 104); 
+    margin-left:0.5vw;
+    vertical-align:top;
+    padding-top:2vh;
+}
+
+
+
+
+#title_content{
+    flex: 1 1 70%;
+    text-align: center;
+  /* border:1px solid red; */
+}
+
+#title_register{
+    flex: 1 1 20%;
+  /* border:1px solid red; */
+}
+
+#title_register>a{
+   display:inline-block;
+   margin-left:5%;
+   margin-top:3%;
+   width:40%;
+   height:70%;
+   padding:3%;
+   text-align: center;
+   border:5px; 
+   border-color: rgba(58, 124, 14, 0.836);
+   border-style: outset;
+   border-radius: 20%;
+   background-color: rgba(136, 142, 158, 0.904);
+   line-height:1;
+   font-family:maruSB;
+   font-size:1vw;
+   text-decoration: none;
+}
+
+
+main{height:86vh; padding:1vw;
+    /* display:flex; */
+    color:rgba(255, 255, 255, 0.932);
+    background-color: rgba(47,52,55);
+    padding:3.38vh;
+}
+
+
+section#home{
+    
+   
+  }
+
+
+
+.contentTitle {  
+    display:inline-block;
+    font-family:maruB; 
+    font-size:1.5vw;
+    color: rgb(255, 255, 255); 
+    margin-left:0.5vw;
+   
+    padding-top:1vh;
+    border-bottom:5px dotted rgba(80, 204, 8, 0.856); 
+  
+}  
+
+.themaTitle {  
+    display:inline-block;
+    font-family:maruSB; 
+    font-size:1.5vw;
+    color: rgb(214, 76, 12); 
+    margin-left:0.5vw;    
+    padding-top:1vh;
+    text-decoration-line:overline;
+    text-decoration-color:rgba(80, 204, 8, 0.856); 
+    text-decoration-thickness:0.3rem; 
+    text-decoration-style: wavy;
+} 
+
+footer{height:7vh;
+    background-color: rgba(14, 1, 6, 0.562);
+   
+}
+
+.foot_text{
+    font-family:maruB;
+    text-align: center;
+    line-height:3;
+    color:cornsilk;
+    font-size:1vw;
+}
+
+.foot_text2{
+    margin-left:20%;
+    font-family:maruB;
+    text-align:center;
+    line-height:3;
+    font-size:1vw;
+    color:rgba(204, 61, 36, 0.795);
+}
+
+.foot_subtext{   
+    margin-left:20vw;
+    font-family:maruEL;
+    text-align:center;
+    line-height:3;
+    color:cornsilk;
+    font-size:0.7vw;
+}
+
+
+
+/* 세부 콘텐츠 글자 포맷 */
+
+.textContent{ font-family:maruR; font-size:2vh; padding-bottom:1vh; }
+.textContent>a{ text-decoration:none; color:white }
+.textContent>a:hover{ text-decoration:underline 2px rgba(230, 226, 233, 0.575) wavy; cursor:grab;}
+.textHeader{ font-family:maruL; font-size:2rem}
+
+
+ /*헤더 로그인 회원박스  */
+#loginForm {position:absolute; top:1vh; right:2vw}
+#loginForm>a{
+    text-decoration: none;
+    margin-left:1vw;
+} 
+#loginForm>a>button{
+    padding:0.3vw;   
+    cursor:copy;
+    background-color: darkblue;
+    color:darkturquoise;
+    border-radius:50%;
+
+    border:5px outset ;
+}
+
+#loginForm>a>button:hover{
+    border:5px inset ;
+}
+
+/* 본문 로그인, 회원가입 폼 박스 */
+#formBox{
+    /* display:none; */
+    position:absolute;
+    top:20%;
+    right:10%;
+}
+
+.nonVisible{
+ display:none;
+}
+
+@media screen and (max-width: 1400px) {
+
+ main {display: block;}
+ .foot_subtext{   
+    margin-left:3vw;}
+    
+}
+
+@media screen and (max-width: 600px) {
+
+    .title_text {font-size: 1vw;}
+    .login  {font-size: 1vw;} 
+    .foot_subtext{   
+        display:block}
+   }

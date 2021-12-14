@@ -1,0 +1,16 @@
+extends ../home/layout
+block style 
+    link(rel="stylesheet" href="/css/register.css")
+
+block indexContent 
+       
+    div.login-page  
+            h1.loginTitle(style="text-align:center; color:white") #{title}       
+            div.form                
+                form.login-form(method="POST" action="/auth/login")
+                    h1.loginTitle(style="text-align:center; color:red; font-size:2vh; padding-bottom:1vh;" )  #{formTitle}
+                    input(type="text" id="email" name="email" placeholder="이메일")
+                    input(type="password" id="pwd" name="pwd" placeholder="비밀번호")
+                    button 로그인
+                    p.message  등록하지 않으셨나요? 
+                        a(href="/auth/register") 등록하기 

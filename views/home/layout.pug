@@ -1,0 +1,38 @@
+doctype html
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="icon" href="img/text-logo.png")
+        title Sphinx'Coding Story
+        link(rel="stylesheet" href="/css/home.css")
+        block style
+        
+
+    body                  
+       - const title = "Sphinx'Coding Story"; 
+        header
+            div#title_box
+                a.title_img(href="/") 
+                //- h1.title_text #{title} 
+            div#title_content               
+                h1.title_text &#128211 express, mongoose로 정리한 백엔드의 모든 것
+            div#title_register
+                a.login(href="/auth/login") 로그인
+                a.logout(href="/auth/logout") 로그아웃 
+        main 
+            section#home 
+                h2.contentTitle &#128211 누구라도 따라하기만 하면 만들어지는 웹서버 흐름도 
+                    span.themaTitle #{thema}
+            block indexContent 
+            
+        footer 
+            - const date = new Date().toLocaleString();
+                     
+            p.foot_text #{title} #{nicname}  
+                span.foot_text2  #{logincheck}
+                span.foot_subtext  #{date} 
+
+    
+        
