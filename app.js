@@ -6,6 +6,7 @@ dotenv.config();
 
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
+const flash = require('connect-flash');
 
 const home = require('./routes/home');
 const auth = require('./routes/auth');
@@ -27,15 +28,17 @@ app.use(express.urlencoded({extended:false}));
 
  app.use(cookieParser());
  app.use(expressSession(
-     {
+     {   
          resave:false,
          saveUninitialized:false,
+        //  key:'spcs',
          secret: process.env.COOKIESECRET,
          cookie: {
             path : "/"
           } 
      }));
 
+ app.use(flash());    
 // app.get('/', (req, res) => {
 //     res.render(`test`);
 // });

@@ -45,7 +45,7 @@ module.exports.login = (req, res) => {
 
                                     req.session.save();
                                     
-                                    //  console.log(req.session.nickNAME)
+                                    //   console.log(req.session)
                                     //  console.log(req.session.isLogin)   
 
 
@@ -53,12 +53,18 @@ module.exports.login = (req, res) => {
                                 res.render('home/index', {nicname:`에 ${user.nicname}님 로그인 하셨습니다.`}); 
                                 }else{
                                     console.log("비번이 틀렸습니다.") ;
-                                res.render('auth/login', {formTitle:"비번이 틀렸습니다"});
+                                    req.flash("error", "password error" )
+                                    res.render('auth/login', {formTitle:req.flash().error});
+                                // res.render('auth/login', {formTitle:"비번이 틀렸습니다"});
                                 }
                           } 
                           else {
-                            console.log("유저 정보가 없습니다.");
-                            res.render('auth/login', {formTitle:"유저 정보가 없습니다."});
+                               console.log(`유저 정보가 없습니다.`);
+                                req.flash("error", "userInfo error" )
+                                
+                                    res.render('auth/login', {formTitle:req.flash().error});
+                                // res.render('auth/login', {formTitle:"유저 정보가 없습니다."});
+                                
                           }                           
          })
          .catch( err => {

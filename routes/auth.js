@@ -17,16 +17,12 @@ router.get('/register', (req, res) => {
 
 router.post('/register', userRegister.register.usercheck, userRegister.register.usersave );
 
-router.get('/logout', (req, res) => {
-
-    req.session.save((err) => {
-        if(err) console.log(err);
-        nicname = " ";
-        res.render('home/index', {nicname:nicname});
+router.get('/logout', async (req, res) => {
+      await req.session.destroy();
+      await res.clearCookie('connect.sid');
+     
+      res.redirect('/')    
         
-    });
-   
-    
 });
 
 
