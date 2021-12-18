@@ -23,9 +23,14 @@ router.get('/nodejs', enter, (req, res) => {
     res.render('contents/01_nodejs', {"thema":"nodejs"});
 })
 
-router.get('/express', (req, res) => {
+router.get('/express', enter, (req, res) => {
     res.render('contents/02_express', {"thema":"express"});
 })
+
+router.get('/pug', (req, res) => {
+    res.render('contents/04_pug', {"thema":"pug"});
+})
+
 
 
 module.exports = router;

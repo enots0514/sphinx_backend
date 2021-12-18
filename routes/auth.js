@@ -18,10 +18,14 @@ router.get('/register', (req, res) => {
 router.post('/register', userRegister.register.usercheck, userRegister.register.usersave );
 
 router.get('/logout', async (req, res) => {
-      await req.session.destroy();
-      await res.clearCookie('connect.sid');
-     
-      res.redirect('/')    
+    await req.session.destroy();
+    
+    await res.clearCookie('connect.sid');
+    // req.session = null;
+    nicname = "";  
+
+    //   res.render(`home/index`, {nicname:""});
+       res.redirect('/')    
         
 });
 
