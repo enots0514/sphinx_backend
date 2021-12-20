@@ -2,14 +2,25 @@ const express = require('express');
 const router = express.Router();
 const userRegister = require('../passport/user-register');
 const strategy = require('../passport/strategy');
-
+const passport = require('passport');
 
 
 router.get('/login', (req, res) => {
-    res.render(`auth/login`);
+    res.render(`auth/login`, {formTitle:req.flash().error});
 });
 
-router.post('/login', strategy.login );
+// passport없이 로그인 시
+// router.post('/login', strategy.login );
+
+// passport 활용해 로그인 시
+ router.post('/login', 
+    passport.authenticate("local", {
+        failureRedirect: '/auth/login',
+        successRedirect: "/",
+        failureFlash:true,
+        // successFlash:true 
+       })   
+  );
 
 router.get('/register', (req, res) => {
     res.render(`auth/register`);
